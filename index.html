@@ -3,133 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sreejoyee 💖 Be My Valentine</title>
+<title>Sree 💜 Be My Valentine</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
-  height: 100vh;
-  overflow: hidden;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1b1f3b, #0a0c1b);
+  color: #eee;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 22px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
   text-align: center;
-  max-width: 90%;
-  animation: pop 1s ease;
 }
 
-@keyframes pop {
-  from {transform: scale(0.6); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
-}
-
-h1 {
-  color: #ff4d6d;
+/* Text */
+h1, h2 {
+  color: #ff79c6;
+  text-shadow: 0 0 10px rgba(255,121,198,0.6);
 }
 
 p {
-  color: #555;
   font-size: 1.1em;
+  color: #cfd3ff;
+  max-width: 650px;
 }
 
+/* Emojis */
 .cats {
-  font-size: 2.3em;
-  margin: 10px 0;
+  font-size: 2.4em;
+  margin: 15px 0;
 }
 
+/* Typewriter */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ff79c6;
+  animation: typing 4s steps(40), blink .7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Buttons */
 button {
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 14px 32px;
+  border-radius: 40px;
   border: none;
-  font-size: 1em;
+  font-size: 1.1em;
   cursor: pointer;
   margin: 10px;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
 }
 
 .yes {
-  background: #ff4d6d;
-  color: white;
+  background: linear-gradient(135deg, #ff79c6, #bd93f9);
+  color: #0a0c1b;
+  box-shadow: 0 0 20px rgba(255,121,198,0.7);
 }
 
 .no {
-  background: #ccc;
+  background: #444;
+  color: #eee;
   position: absolute;
 }
 
-#final {
-  display: none;
-}
-
+/* Floating emojis */
 .floating {
-  position: absolute;
-  font-size: 1.5em;
-  animation: float 6s linear infinite;
+  position: fixed;
+  bottom: -10vh;
+  font-size: 1.7em;
+  animation: floatUp 9s linear infinite;
+  opacity: 0.8;
 }
 
-@keyframes float {
-  from {transform: translateY(100vh); opacity: 1;}
-  to {transform: translateY(-10vh); opacity: 0;}
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-140vh); opacity: 0; }
 }
+
+/* Sparkle cursor */
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.2em;
+  animation: sparkle 1s ease forwards;
+}
+
+@keyframes sparkle {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(2); }
+}
+
+/* Heart fireworks */
+.heart {
+  position: fixed;
+  font-size: 2em;
+  animation: boom 2.8s ease-out forwards;
+}
+
+@keyframes boom {
+  from { opacity: 1; transform: scale(0); }
+  to { opacity: 0; transform: scale(2.2) translateY(-300px); }
+}
+
+#final { display: none; }
 </style>
 </head>
 
 <body>
 
-<div class="card" id="main">
-  <div class="cats">🐱💖😺🐾😻💗🐱</div>
-  <h1>Hey Sreejoyee 💕</h1>
-  <p>
-    Every little thing reminds me of you.<br>
-    So I have just one important question…
-  </p>
-  <h2>Will you be my Valentine? 🌹</h2>
+<!-- Background music (starts on tap) -->
+<audio id="bgMusic" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
 
-  <button class="yes" onclick="yesClicked()">YES 😻💖</button>
+<!-- SECTION 1 -->
+<section>
+  <div class="cats">🌙🐱✨💜😺</div>
+  <h1 class="typewriter">Hey Sree 💕</h1>
+  <p>
+    It’s late… the world is quiet.  
+    And this page exists just for you ✨
+  </p>
+</section>
+
+<!-- SECTION 2 -->
+<section>
+  <h2>Midnight Thoughts 💜</h2>
+  <p>
+    Some people feel like home.  
+    Some people feel like comfort.  
+    And then there’s you… who feels like magic 🌌😺
+  </p>
+  <div class="cats">🐾💫🐱💜🐾</div>
+</section>
+
+<!-- SECTION 3 -->
+<section>
+  <h2>The Question 🌹</h2>
+  <p>
+    My heart has been whispering this  
+    under the stars…
+  </p>
+
+  <h2>Will you be my Valentine, Sree? 💖</h2>
+
+  <button class="yes" onclick="yesClicked()">YES 😻💜</button>
   <button class="no" id="noBtn" onclick="moveNo()">NO 🙈</button>
-</div>
+</section>
 
-<div class="card" id="final">
-  <div class="cats">😻💘🐱💞🐾💖</div>
-  <h1>YAYYYY Sreejoyee 💖</h1>
+<!-- FINAL -->
+<section id="final">
+  <div class="cats">💖🌙🐱✨💜</div>
+  <h1>YAYYYY SREE 💕</h1>
   <p>
-    You just made my heart go<br>
-    <b>MEOW MEOW MEOW 😺💗</b><br><br>
-    Happy Valentine’s Day 💐
+    You just made my heart glow brighter  
+    than the stars tonight ✨💜<br><br>
+    Thank you for being you.  
+    Happy Valentine’s Day 🌹
   </p>
-</div>
+</section>
 
 <script>
+// Music on first tap (mobile-friendly)
+document.body.addEventListener("click", () => {
+  document.getElementById("bgMusic").play();
+}, { once: true });
+
+// YES click
 function yesClicked() {
-  document.getElementById("main").style.display = "none";
-  document.getElementById("final").style.display = "block";
+  document.getElementById("final").style.display = "flex";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  fireworks();
 }
 
+// NO button escape
 function moveNo() {
   const btn = document.getElementById("noBtn");
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 50);
-  btn.style.left = x + "px";
-  btn.style.top = y + "px";
+  btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+  btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
 }
 
-// Floating hearts & cats
+// Floating emojis
 setInterval(() => {
   const el = document.createElement("div");
   el.className = "floating";
   el.style.left = Math.random() * 100 + "vw";
-  el.innerHTML = ["💖","🐱","😺","💗","😻"][Math.floor(Math.random()*5)];
+  el.innerHTML = ["💜","🐱","✨","🌙","😺","💖"][Math.floor(Math.random()*6)];
   document.body.appendChild(el);
-  setTimeout(() => el.remove(), 6000);
-}, 500);
+  setTimeout(() => el.remove(), 9000);
+}, 700);
+
+// Sparkle cursor
+document.addEventListener("mousemove", e => {
+  const s = document.createElement("div");
+  s.className = "sparkle";
+  s.style.left = e.clientX + "px";
+  s.style.top = e.clientY + "px";
+  s.innerHTML = "✨";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 1000);
+});
+
+// Fireworks hearts
+function fireworks() {
+  for (let i = 0; i < 30; i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.style.left = Math.random() * window.innerWidth + "px";
+    h.style.top = Math.random() * window.innerHeight + "px";
+    h.innerHTML = "💜";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 2800);
+  }
+}
 </script>
 
 </body>
